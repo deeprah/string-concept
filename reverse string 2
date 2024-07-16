@@ -1,0 +1,17 @@
+class Solution {
+public:
+    string reverseStr(string s, int k) {
+        int n = s.size();
+        
+        // Iterate over the string in chunks of size 2*k
+        for (int start = 0; start < n; start += 2 * k) {
+            // Calculate the end index for the current segment to reverse
+            int end = min(start + k - 1, n - 1);
+            
+            // Reverse the segment from start to end
+            reverse(s.begin() + start, s.begin() + end + 1);
+        }
+        
+        return s;
+    }
+};

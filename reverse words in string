@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        string temp;
+    stringstream ss(s);
+    vector<string> words;
+    
+        while(ss>>temp){
+words.push_back(temp);
+    }
+   //Reverse the order of words in the vector
+    reverse(words.begin(), words.end());
+      // Construct the result string by joining words with a space
+        string result;
+        for (size_t i = 0; i < words.size(); ++i) {
+            result += words[i];
+            if (i != words.size() - 1) {
+                result += " ";
+            }
+            
+        }
+        
+        return result;
+        
+    }
+};
